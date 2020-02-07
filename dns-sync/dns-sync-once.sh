@@ -10,7 +10,6 @@ PS=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
 . /lib/init/vars.sh
 . /lib/lsb/init-functions
 
-  #oemcp=$(reg.exe query "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CodePage" /v OEMCP 2>&1 | sed -n 3p | sed -e 's|\r||g' | grep -o '[[:digit:]]*')
   oemcp=$(reg.exe query "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CodePage" /v OEMCP | sed -n 3p | sed -e 's|\r||g' | grep -o '[[:digit:]]*')
   /mnt/c/WINDOWS/system32/chcp.com $oemcp > /dev/null
 
@@ -29,8 +28,8 @@ PS=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
 
   #Modify /etc/resolv.conf
   touch /etc/resolv.conf
-  sed -i '/nameserver/d' /etc/resolv.conf > /dev/null #2>&1 || true
-  sed -i '/search/d' /etc/resolv.conf > /dev/null #2>&1 || true
+  sed -i '/nameserver/d' /etc/resolv.conf > /dev/null 2>&1 || true
+  sed -i '/search/d' /etc/resolv.conf > /dev/null 2>&1 || true
 
   for i in "${UNIQUE_NAMESERVERS[@]}"
   do
