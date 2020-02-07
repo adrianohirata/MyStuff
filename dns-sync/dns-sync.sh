@@ -5,7 +5,8 @@
 # Required-Stop:
 # Default-Start:     S
 # Default-Stop:
-# Short-Description: Synchronizes /etc/resolv.conf in WLS with Windows DNS - Matthias Brooks
+# Short-Description: Synchronizes /etc/resolv.conf in WLS with Windows DNS
+# Description: Original script by Matthias Brooks https://gist.github.com/matthiassb/9c8162d2564777a70e3ae3cbee7d2e95
 ### END INIT INFO
 
 PATH=/sbin:/bin:/mnt/c/WINDOWS/system32
